@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import './App.css';
 import {useState} from 'react';
 import Axios from 'axios';
@@ -6,9 +7,9 @@ function App() {
 
   const [name, setName] = useState("");
   const [country, setCountry] = useState("");
-
   const [countryList, setCountryList] = useState([]);
-  
+  const [listCountry, setListCountry] = useState([]);
+
   const addCountry = () => {
     Axios.post("http://localhost:3001/create", {
       name: name,
@@ -29,6 +30,19 @@ function App() {
     }); 
   }
 
+  useEffect(() =>{
+    fetch('https://restcountries.com/v2/all')
+    .then((response) => {
+      return response.json()
+    }).then((data) => {
+      setListCountry(data)
+      console.log(data)
+    })
+    .catch(() => {
+      console.log('error, fetch')
+    })
+  }, [])
+
   return (
     <div className="App">
       <div className="information">
@@ -40,10 +54,11 @@ function App() {
         <select onChange={(event) => {
             setCountry(event.target.value);
           }}>
-          <option selected value="Seleccionar">Seleccionar</option>
-          <option value="londres">londres</option>
-          <option value="lima">Lima</option>
-          <option value="colombia">colombia</option>
+            {listCountry.map(({name}) => {
+              return(
+                <option value={name}>{name}</option>
+              )
+            })}
         </select>
         <button onClick={addCountry}>Add Information</button>
       </div>
