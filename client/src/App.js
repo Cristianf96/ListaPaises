@@ -4,7 +4,7 @@ import {useState} from 'react';
 import Axios from 'axios';
 
 function App() {
-
+  
   const [name, setName] = useState("");
   const [country, setCountry] = useState("");
   const [countryList, setCountryList] = useState([]);
@@ -49,7 +49,7 @@ function App() {
         <label>Complete Name</label>
         <input type="text" onChange={(event) => {
             setName(event.target.value);
-          }}/>
+          }} placeholder="Escriba su Nombre"/>
         <label>Country</label>
         <select onChange={(event) => {
             setCountry(event.target.value);
