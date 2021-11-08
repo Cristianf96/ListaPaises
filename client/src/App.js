@@ -11,7 +11,7 @@ function App() {
   const [listCountry, setListCountry] = useState([]);
 
   const addCountry = () => {
-    Axios.post("http://localhost:3001/create", {
+    Axios.post("https://apilista.herokuapp.com/create", {
       name: name,
       country: country
     }).then(() => {
@@ -25,7 +25,7 @@ function App() {
   }
 
   const getCountry = () => {
-    Axios.get("http://localhost:3001/list").then((response) => {
+    Axios.get("https://apilista.herokuapp.com/list").then((response) => {
         setCountryList(response.data);
     }); 
   }
