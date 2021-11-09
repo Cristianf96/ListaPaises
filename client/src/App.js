@@ -13,21 +13,35 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="information">
-        <Information />
-      </div>
-      <div className="list">
-        <button onClick={getCountry}>Show List</button>
-        <div>
-          {countryList.map((val, key) => {
-            return (
-              <div className="countrylist">
-                <h4>Name: {val.name}</h4>
-                <h4>Country: {val.country}</h4>
-              </div>
-            );
-          })}
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <Information />
+          <button onClick={getCountry} className="btn btn-outline-info">
+            Show List
+          </button>
+        </div>
+        <div className="col">
+          <table className="table table-hover">
+            <thead>
+              <tr className="table-light">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              {countryList.map((val, key) => {
+                return (
+                  <tr>
+                    <td>{val.id}</td>
+                    <td>{val.name}</td>
+                    <td>{val.country}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

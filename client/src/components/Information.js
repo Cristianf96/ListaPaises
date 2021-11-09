@@ -31,22 +31,29 @@ const Information = () => {
   return (
     <Fragment>
       <form onSubmit={addCountry}>
-        <h1>information</h1>
-        <label>Complete Name</label>
+        <h1>Date Country</h1>
+        <div className="mb-3">
+        <label className="form-label">Complete Name</label>
         <input
           name="name"
           type="text"
+          className="form-control"
           placeholder="Escriba su Nombre"
           onChange={(event) => {
             setName(event.target.value);
           }}
-          pattern="[a-zA-Z]+"
+          pattern="[a-zA-Z ]{2,254}"
           title="Solo Alfabeticos en MAYUSCULAS o minusculas"
           required
         />
-        <label>Country</label>
+        </div>
+        <div className="mb-3">
+
+        <label className="form-label">Country</label>
         <select
           name="country"
+          className="form-select"
+          aria-label=".form-select-sm example"
           onChange={(event) => {
             setCountry(event.target.value);
           }}
@@ -61,7 +68,8 @@ const Information = () => {
             );
           })}
         </select>
-        <button>Add Information</button>
+          <button className="btn btn-outline-primary">Add Information</button>
+        </div>
       </form>
     </Fragment>
   );
