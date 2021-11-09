@@ -12,6 +12,7 @@ const Information = () => {
       name: name,
       country: country,
     });
+    e.target.reset();
   };
 
   useEffect(() => {
