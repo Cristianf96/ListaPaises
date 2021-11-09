@@ -5,6 +5,6 @@ URL de la API utilizada para la lista de paises global: https://restcountries.co
 URL del BACKEND API en NodeJS + BD en PostgreSQL: https://apilista.herokuapp.com/
 URL del FRONTEND en REACT y BOOTSTRAP: https://frontlista.herokuapp.com/
 
-URL del repositorio en GITHUB del proeycto:
+URL del repositorio en GITHUB del proeycto: https://github.com/Cristianf96/ListaPaises
 
 Espereo respuestas si no funcionan los link por favor notificarme al correo cb961218@gmail.com
