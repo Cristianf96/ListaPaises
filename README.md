@@ -7,4 +7,6 @@ URL del FRONTEND en REACT y BOOTSTRAP: https://frontlista.herokuapp.com/
 
 URL del repositorio en GITHUB del proeycto: https://github.com/Cristianf96/ListaPaises
 
-Espereo respuestas si no funcionan los link por favor notificarme al correo cb961218@gmail.com
+Espero confirmacion para la respuesta
+
+Si no funcionan los link por favor notificarme al correo cb961218@gmail.com
